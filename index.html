@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mike Park</title>
+    <meta charset="utf-8"> 
+     <link href="https://fonts.googleapis.com/css?family=Rosarivo:400,400i" rel="stylesheet">
+     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />`
+
+
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-rendering: optimizeLegibility;
+        -webkit-text-size-adjust: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    html, body {
+        font-family: 'Rosarivo', serif;
+        width: 100%;
+        height: auto;
+        color: #FFF;
+        background: #000;
+        cursor: url('cur-1.png') 5 5, auto;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        overflow: hidden;
+    }
+    body:after {
+        content:'';
+        position: fixed;
+        display: block;
+        z-index: 2;
+        width: 100%;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        background: #FFD200;
+        cursor: none;
+        -webkit-animation: slideOut 600ms 600ms forwards;
+        animation: slideOut 600ms 600ms forwards;
+    }
+    h1 {
+        margin: 120px 11%;
+        max-width: 650px;
+    }
+    h1, a {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 54px;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: #FFF;
+    }
+    a.link {
+        position: fixed;
+        bottom: 30px;
+        right: 40px;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 1;
+    }
+    a.mail {
+        cursor: url('cur-2.png') 5 5, auto;
+        border-bottom: 2px solid #FFF;
+    }
+    a.site, i {
+        font-style: italic;
+    }
+    a:hover {
+        cursor: url('cur-2.png') 5 5, auto;
+        text-decoration: none;
+        outline: none;
+        border: none;
+    }
+    time {
+        position: fixed;
+        top: 30px;
+        right: 40px;
+        min-width: 140px;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 1px;
+        text-align: right;
+    }
+    @-webkit-keyframes slideOut {
+        100% { visibility:hidden; -webkit-transform:translateX(100%); }
+    }
+    @keyframes slideOut {
+        100% { visibility:hidden; transform:translateX(100%); }
+    }
+    </style>
+</head>
+<body>
+    <h1>Hello—<br><br>I’m <a href="" class="site">Mike Park</a>, a computer science student at the University of Texas at Austin. <br><br>My current objective is to further my CS experience through work and internships.
+    <br><br>If you would like to contact me, please email at <a href="mailto:14ypark@gmail.com" class="mail">14ypark@gmail.com</a><br><br>Thank you.</h1>
+    <a href="https://github.com/14ypark" class="link">@14ypark</a>
+    <time></time>
+    <script>
+    (function Time() {
+        var now = new Date();
+        var H = now.getHours();
+        var M = now.getMinutes();
+        var P = H >= 12 ? 'PM' : 'AM';
+        var D = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()];
+        H = ((H + 11) % 12 + 1);
+        M < 10 && (M = '0' + M);
+        document.querySelector('time').innerHTML = D + ' ' + H + ':' + M + ' ' + P;
+        setTimeout(Time, 1000);
+        })(); 
+    </script>
+</body>
+</html>
